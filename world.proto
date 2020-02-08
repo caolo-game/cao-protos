@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package world;
+
+message Point
+{
+  uint32 x = 1;
+  uint32 y = 2;
+}
+
+message Bot
+{
+  uint32 id = 1;
+  Point position = 2;
+  bytes owner = 3; // uuid
+}
+
+message WorldState
+{
+  repeated Bot bots = 1;
+}
