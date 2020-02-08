@@ -2,16 +2,16 @@ syntax = "proto3";
 
 package world;
 
-message Point
+message AxialPoint
 {
-  int32 x = 1;
-  int32 y = 2;
+  int32 q = 1;
+  int32 r = 2;
 }
 
 message Bot
 {
   uint32 id = 1;
-  Point position = 2;
+  AxialPoint position = 2;
   bytes owner = 3; // uuid
 }
 
