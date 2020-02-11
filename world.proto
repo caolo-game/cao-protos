@@ -19,6 +19,7 @@ message WorldState
 {
   repeated Bot bots = 1;
   repeated LogEntry logs = 2;
+  repeated Tile terrain = 3;
 }
 
 message LogEntry
@@ -26,4 +27,14 @@ message LogEntry
   uint32 entity_id = 1;
   uint64 time = 2;
   repeated string payload = 3;
+}
+
+message Tile
+{
+  AxialPoint position = 1;
+  enum TerrainType {
+    EMPTY = 0;
+    WALL = 1;
+  };
+  TerrainType ty = 2;
 }
