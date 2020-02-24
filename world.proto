@@ -15,11 +15,24 @@ message Bot
   bytes owner = 3; // uuid
 }
 
+message Resource
+{
+  enum ResourceType {
+    ENERGY = 0;
+  };
+  uint32 id = 1;
+  ResourceType ty = 2;
+  AxialPoint position = 3;
+  uint32 energy = 4;
+  uint32 energyMax = 5;
+}
+
 message WorldState
 {
   repeated Bot bots = 1;
   repeated LogEntry logs = 2;
   repeated Tile terrain = 3;
+  repeated Resource resources = 4;
 }
 
 message LogEntry
