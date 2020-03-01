@@ -10,5 +10,6 @@ message InputMsg
   oneof msg
   {
     scripts.UpdateScript update_script = 2;
+    scripts.UpdateEntityScript update_entity_script = 3;
   }
 }

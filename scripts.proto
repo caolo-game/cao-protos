@@ -2,6 +2,13 @@ syntax = "proto3";
 
 package scripts;
 
+message UpdateEntityScript
+{
+  bytes user_id = 1;
+  uint32 entity_id = 2;
+  bytes script_id = 3;
+}
+
 message UpdateScript
 {
   bytes user_id = 1;
