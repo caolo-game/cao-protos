@@ -15,6 +15,23 @@ message Bot
   bytes owner = 3; // uuid
 }
 
+message Structure
+{
+  uint32 id = 1;
+  AxialPoint position = 2;
+  bytes owner = 3; // uuid
+  oneof payload
+  {
+    StructureSpawn spawn = 4;
+  };
+}
+
+message StructureSpawn
+{
+  int32 time_to_spawn = 1;
+  uint32 spawning = 2;
+}
+
 message Resource
 {
   enum ResourceType {
@@ -33,6 +50,7 @@ message WorldState
   repeated LogEntry logs = 2;
   repeated Tile terrain = 3;
   repeated Resource resources = 4;
+  repeated Structure structures = 5;
 }
 
 message LogEntry
