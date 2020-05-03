@@ -66,6 +66,7 @@ message Tile
   enum TerrainType {
     EMPTY = 0;
     WALL = 1;
+    PLAIN = 2;
   };
   TerrainType ty = 2;
 }
