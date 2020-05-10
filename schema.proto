@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package schema;
+
+message Function
+{
+  string name = 1;
+  string description = 2;
+  repeated string input = 3;
+  repeated string output = 4;
+  repeated string params = 5;
+}
+
+message Schema 
+{
+  repeated Function functions = 1;
+}
