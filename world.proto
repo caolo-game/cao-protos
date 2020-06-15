@@ -8,17 +8,23 @@ message AxialPoint
   int32 r = 2;
 }
 
+message WorldPosition 
+{
+  AxialPoint room = 1;
+  AxialPoint pos = 2;
+}
+
 message Bot
 {
   uint32 id = 1;
-  AxialPoint position = 2;
+  WorldPosition position = 2;
   bytes owner = 3; // uuid
 }
 
 message Structure
 {
   uint32 id = 1;
-  AxialPoint position = 2;
+  WorldPosition position = 2;
   bytes owner = 3; // uuid
   oneof payload
   {
@@ -39,7 +45,7 @@ message Resource
   };
   uint32 id = 1;
   ResourceType ty = 2;
-  AxialPoint position = 3;
+  WorldPosition position = 3;
   uint32 energy = 4;
   uint32 energyMax = 5;
 }
@@ -65,7 +71,7 @@ message WorldTerrain{
 
 message Tile
 {
-  AxialPoint position = 1;
+  WorldPosition position = 1;
   enum TerrainType {
     EMPTY = 0;
     WALL = 1;
