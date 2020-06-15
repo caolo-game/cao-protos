@@ -76,6 +76,7 @@ message Tile
     EMPTY = 0;
     WALL = 1;
     PLAIN = 2;
+    BRIDGE = 3;
   };
   TerrainType ty = 2;
 }
