@@ -65,8 +65,15 @@ message LogEntry
   repeated string payload = 3;
 }
 
-message WorldTerrain{
+message WorldTerrain
+{
   repeated Tile tiles = 1;
+  RoomProperties roomProperties = 2;
+}
+
+message RoomProperties
+{
+  uint32 roomRadius = 1;
 }
 
 message Tile
